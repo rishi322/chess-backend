@@ -50,7 +50,7 @@ const cors = require('cors');
 app.use(cors({ origin: 'https://frabjous-biscuit-538177.netlify.app' }));
 
 // default to relative binary in repo
-const defaultStockfish = path.join(__dirname, 'stockfish', '\\stockfish-windows-x86-64.exe');
+const defaultStockfish = path.join(__dirname, 'stockfish', 'stockfish-windows-x86-64.exe');
 const stockfishPath = process.env.STOCKFISH_PATH || defaultStockfish;
 
 app.post('/getMove', (req, res) => {
