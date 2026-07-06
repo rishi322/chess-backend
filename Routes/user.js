@@ -8,8 +8,8 @@ router.get('/createUser',async(req,res)=>{
 
 
     const result = await user.create({
-        userName:'deep',
-        email:'deep@gmail.com',
+        userName:'rishi',
+        email:'rishi.p3202@gmail.com',
         password:"123456"
     })
 
