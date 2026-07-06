@@ -45,16 +45,18 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 const cors = require('cors');
+// Temporarily allow all for local testing
+// app.use(cors());
 app.use(cors({ origin: 'https://frabjous-biscuit-538177.netlify.app' }));
 
 // default to relative binary in repo
-const defaultStockfish = path.join(__dirname, 'bin', 'stockfish');
+const defaultStockfish = path.join(__dirname, 'stockfish', '\\stockfish-windows-x86-64.exe');
 const stockfishPath = process.env.STOCKFISH_PATH || defaultStockfish;
 
 app.post('/getMove', (req, res) => {
   const fen = req.body.fen;
   console.log('FEN:', fen);
-
+  
   // spawn stockfish and stream commands to it
   const stockfishProcess = exec(`"${stockfishPath}"`, (error, stdout, stderr) => {
     if (error) {
