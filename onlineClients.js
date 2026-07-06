@@ -76,16 +76,16 @@ wss.on('connection', ws => {
       }else if(msg.type == 'moves'){
 
         console.log('this is messgae')
-        const result = await game.find({gameId:msg[0].gameId});
+        const result = await game.find({gameId:msg.gameId});
        
-          game.create({gameId:msg[0].gameId,moves:msg[0].message,fenString:''})
+          game.create({gameId:msg.gameId,moves:msg.message,fenString:''})
           
         
         wss.clients.forEach(client=>{
           const mov = JSON.stringify(message)
-          console.log(msg[0].message)
+          console.log(msg.message)
           
-         client.send(JSON.stringify([{type:'move',msg:msg[0].message,gameId:msg[0].gameId}]))
+         client.send(JSON.stringify([{type:'move',msg:msg.message,gameId:msg.gameId}]))
         })
       }
       else{
