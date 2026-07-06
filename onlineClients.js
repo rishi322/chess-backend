@@ -73,7 +73,7 @@ wss.on('connection', ws => {
         const acg = await activeGames.create({gameId: msg.message, moves: '',status:'created',player:1,creater:msg.creater,player2:''})
 
         console.log(acg)
-      }else if(msg[0].type == 'moves'){
+      }else if(msg.type == 'moves'){
 
         console.log('this is messgae')
         const result = await game.find({gameId:msg[0].gameId});
