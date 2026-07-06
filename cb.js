@@ -47,7 +47,7 @@ app.use(express.json());
 const cors = require('cors');
 // Temporarily allow all for local testing
 // app.use(cors());
-app.use(cors({ origin: 'https://frabjous-biscuit-538177.netlify.app' }));
+app.use(cors({ origin: 'https://chess-front-sandy.vercel.app' }));
 
 // default to relative binary in repo
 const defaultStockfish = path.join('https://github.com/rishi322/chess-backend/blob/main/stockfish/stockfish-windows-x86-64.exe');

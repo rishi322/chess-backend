@@ -33,7 +33,7 @@ const mongoose = require('mongoose');
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors({ origin: 'https://frabjous-biscuit-538177.netlify.app' }));
+app.use(cors({ origin: 'https://chess-front-sandy.vercel.app',  }));
 
 // Build DB URI safely
 const dbUser = 'rishi';          // e.g. "rishi"

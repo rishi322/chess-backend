@@ -113,7 +113,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // Allow the frontend origin; change to your Netlify or custom domain
-app.use(cors({ origin: 'https://frabjous-biscuit-538177.netlify.app' }));
+app.use(cors({ origin: 'https://chess-front-sandy.vercel.app/' }));
 
 app.get('/', (req, res) => res.send('Socket service is running'));
 
